@@ -47,7 +47,7 @@ async def render_latex(job_id, output_format, code, density, quality):
             f.close()
         try:
             try:
-                for i in range(0, 2):
+                for i in range(0, 3):
                     await run_command_async(
                         COMMAND_LATEX.format(pdir = pdir, fname = fname),
                         timeout = 8
