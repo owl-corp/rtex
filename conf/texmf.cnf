@@ -1,0 +1,6 @@
+TEXMFLOCAL = $SELFAUTOPARENT/texmf-local
+TEXMFVAR = ~/.texlive/texmf-var
+shell_escape = f
+parse_first_line = f
+openout_any = p
+openin_any = p
