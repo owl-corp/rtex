@@ -1,4 +1,4 @@
-FROM perl:slim AS builder
+FROM --platform=linux/amd64 perl:slim AS builder
 # Install and build TeXLive
 WORKDIR /latex
 RUN mkdir build
@@ -15,7 +15,7 @@ ENV PATH="$PATH:/usr/local/texlive/bin/x86_64-linux"
 RUN tlmgr update --self
 RUN tlmgr install collection-fontsrecommended bbm bbm-macros siunitx
 
-FROM python:3.10-slim
+FROM --platform=linux/amd64 python:3.10-slim
 
 # Copy in built texlive binaries and install convert (from imagemagick)
 COPY --from=builder /usr/local/texlive /usr/local/texlive
