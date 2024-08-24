@@ -13,8 +13,7 @@ import traceback
 import aiohttp_cors
 
 
-loop = asyncio.get_event_loop()
-app = aiohttp.web.Application(loop = loop)
+app = aiohttp.web.Application()
 cors = aiohttp_cors.setup(app)
 app.router.add_static('/static', './static')
 app.router.add_get('/favicon.ico',
